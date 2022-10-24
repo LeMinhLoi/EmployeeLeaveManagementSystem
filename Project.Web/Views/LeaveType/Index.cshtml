@@ -1,0 +1,45 @@
+﻿@{
+}
+@section Scripts{
+    <script src="~/js/LeaveType/index.js"></script>
+}
+@section Styles{
+    
+}
+ <p>
+    <a class="btn btn-outline-info" asp-action="Create"><i class="fas fa-plus"></i> Create New</a>
+ </p>
+<!-- DataTales Example -->
+<div class="card shadow mb-2">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables of Leave Type</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTableLeaveType" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Name</th>
+                        <th>Default Days</th>
+                        <th>Delete Action</th>
+                        <th>Edit Action</th>
+                        <th>Details</th>
+                        <th>Leave Allocation</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<partial name="_DetailsLeaveTypeModal.cshtml" />
+
+<form id="deleteFrom" asp-action="Delete">
+    <input type="hidden" id="leaveTypeIdToDelete" name="Id"/>
+</form>
+
+<form id="toPageEdit" asp-action="Edit" method="get">
+    <input type="hidden" id="leaveTypeIdToEdit" name="Id"/>
+</form>
+
